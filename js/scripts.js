@@ -11,12 +11,16 @@ Pizza.prototype.calcPrice = function () {
   let basePrice;
   let toppingsPrice = .50;
   let costOfToppings = this.toppings.length * toppingsPrice;
-  if (this.size === "Large") {
-    basePrice = 12.50;
-  } else if (this.size === "Medium") {
-    basePrice = 10;
-  } else if (this.size === "Small") {
-    basePrice = 7.50;
+  switch (this.size) {
+    case ("Large"):
+      basePrice = 12.50;
+      break;
+    case ("Medium"):
+      basePrice = 10;
+      break;
+    case ("Small"):
+      basePrice = 7.50;
+      break;
   }
   return basePrice;
 }
