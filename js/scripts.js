@@ -50,8 +50,10 @@ function handleFormSubmission(event) {
   selectedToppings.forEach(function (element) {
     toppingsArray.push(element.value);
   });
-  completeOrder(toppingsArray)
-  return toppingsArray;
+  // let sizeOfPizza = returnPizzaSize();
+  let newPizza = new Pizza(returnPizzaSize(), toppingsArray);
+  console.log(newPizza);
+
 
 
 
@@ -64,30 +66,26 @@ function handleFormSubmission(event) {
 
 }
 
-function completeOrder(toppingsSelection) {
-  // let finishedPizza = pizza;
-  let finalToppings = toppingsSelection;
 
-  // finishedPizza.toppings = finalToppings;
-  console.log("This is the final topping selection: " + finalToppings);
-}
 
 function click() {
   const div = document.getElementById("click-size-selection");
-  div.addEventListener("click", createNewOrder);
+  div.addEventListener("click", savePizzaSize);
   // const delButton = document.querySelector("button.delete");
   // delButton.addEventListener("click", handleDelete);
 }
 
-function createNewOrder(event) {
+function savePizzaSize(event) {
   let pizzaSize = event.target.value;
-
-  console.log("This was the size that was selected: " + pizzaSize);
-  let newPizza = new Pizza(pizzaSize);
-  console.log(newPizza);
-  return newPizza;
+  returnPizzaSize(pizzaSize)
+  return pizzaSize;
 }
 
+function returnPizzaSize(psize) {
+  let returnedPizzaSize = psize
+  console.log(returnedPizzaSize);
+  return returnedPizzaSize;
+}
 
 // function resubmit() {
 
