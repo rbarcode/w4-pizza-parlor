@@ -43,6 +43,11 @@ Test #2: "It should return the price of one topping."
 Code: myPizza.calcPrice();
 Expected Output: 0.5
 
+Test #3: "It should return the price of all toppings."
+Code: myPizza.calcPrice();
+Expected Output: 1
+
+
 ## Known Bugs
 
 No known bugs.
