@@ -33,27 +33,39 @@
 
 **Describe: Pizza()**
 
-Test #1: "It should return a Pizza object with two properties for toppings and size"
-Code: const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);
+Test #1: "It should return a Pizza object with two properties for toppings and size"  
+Code: const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);  
 Expected Output: Pizza { size: "medium", toppings: ["anchovies", "pineapple"] }   
 
 **Describe: Pizza.prototype.calcPrice()**
 
-Test #2: "It should return the price of one topping."
-Code: myPizza.calcPrice();
+Test #2: "It should return the price of one topping."  
+Code: myPizza.calcPrice();  
 Expected Output: 0.5
 
 Test #3: "It should return the price of all toppings."
-Code: myPizza.calcPrice();
+Code:  
+const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);  
+myPizza.calcPrice();  
 Expected Output: 1
 
-Test #4: "It should return the base price of a large pizza."
-Code: myPizza.calcPrice();
+Test #4: "It should return the base price of a large pizza."  
+Code:  
+const myPizza = new Pizza("Large", ["anchovies", "pineapple"]);  
+myPizza.calcPrice();  
 Expected Output: 12.50
 
-Test #5: "It should return the base price of a medium pizza."
-Code: myPizza.calcPrice();
-Expected Output: 10
+Test #5: "It should return the base price of a medium pizza."  
+Code:  
+const myPizza = new Pizza("Medium", ["anchovies", "pineapple"]);  
+myPizza.calcPrice();  
+Expected Output: 10  
+
+Test #6: "It should return the base price of a small pizza."  
+Code:  
+const myPizza = new Pizza("Small", ["anchovies", "pineapple"]);  
+myPizza.calcPrice();  
+Expected Output: 7.50  
 
 ## Known Bugs
 
