@@ -33,10 +33,15 @@
 
 **Describe: Pizza()**
 
-Test: "It should return a Pizza object with two properties for toppings and size"
+Test #1: "It should return a Pizza object with two properties for toppings and size"
 Code: const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);
 Expected Output: Pizza { size: "medium", toppings: ["anchovies", "pineapple"] }   
 
+**Describe: Pizza.prototype.calcPrice()**
+
+Test #2: "It should return the price of one topping."
+Code: myPizza.calcPrice();
+Expected Output: 0.5
 
 ## Known Bugs
 
