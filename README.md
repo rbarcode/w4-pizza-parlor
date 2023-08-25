@@ -47,6 +47,9 @@ Test #3: "It should return the price of all toppings."
 Code: myPizza.calcPrice();
 Expected Output: 1
 
+Test #4: "It should return the base price of a large pizza."
+Code: myPizza.calcPrice();
+Expected Output: 12.50
 
 ## Known Bugs
 
