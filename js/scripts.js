@@ -13,13 +13,13 @@ Pizza.prototype.calcPrice = function () {
   let costOfToppings = this.toppings.length * toppingsPrice;
 
   switch (this.size) {
-    case ("Large"):
+    case ("large"):
       basePrice = 12.50;
       break;
-    case ("Medium"):
+    case ("medium"):
       basePrice = 10;
       break;
-    case ("Small"):
+    case ("small"):
       basePrice = 7.50;
       break;
   }
@@ -46,6 +46,7 @@ function submit() {
 function handleFormSubmission(event) {
   event.preventDefault();
 
+
 }
 
 function click() {
@@ -55,23 +56,13 @@ function click() {
   // delButton.addEventListener("click", handleDelete);
 }
 
-function createNewOrder() {
-  let pizzaSize;
+function createNewOrder(event) {
+  let pizzaSize = event.target.value;
 
-  if (event.target.value === "small") {
-    pizzaSize = "Small";
-    // console.log("Small was selected");
-  } else if (event.target.value === "medium") {
-    pizzaSize = "Medium";
-    // console.log("Medium was selected");
-  } else if (event.target.value === "large") {
-    pizzaSize = "Large";
-    // console.log("Large was selected");
-  }
-
-  // console.log("This was the size that was selected :" + pizzaSize);
-  // let newPizza = new Pizza(pizzaSize);
-  // return newPizza;
+  console.log("This was the size that was selected: " + pizzaSize);
+  let newPizza = new Pizza(pizzaSize);
+  console.log(newPizza);
+  return newPizza;
 }
 
 
