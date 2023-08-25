@@ -10,5 +10,6 @@ function Pizza(size, toppings) {
 Pizza.prototype.calcPrice = function() {
 
   let toppingsPrice = .50;
-  return toppingsPrice;
+  let costOfToppings = this.toppings.length * toppingsPrice;
+  return costOfToppings;
   }
