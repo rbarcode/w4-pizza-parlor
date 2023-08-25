@@ -11,6 +11,7 @@ Pizza.prototype.calcPrice = function () {
   let basePrice;
   let toppingsPrice = .50;
   let costOfToppings = this.toppings.length * toppingsPrice;
+
   switch (this.size) {
     case ("Large"):
       basePrice = 12.50;
@@ -22,5 +23,7 @@ Pizza.prototype.calcPrice = function () {
       basePrice = 7.50;
       break;
   }
-  return basePrice;
+
+  let finalPrice = basePrice + costOfToppings;
+  return finalPrice;
 }
