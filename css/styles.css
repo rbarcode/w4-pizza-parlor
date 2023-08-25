@@ -7,11 +7,28 @@
   overflow: hidden;
 }
 
-.column {
+.size-column {
   float: left;
   margin: 1%;
   padding: 10px;
   width: 10%;
   border: 1px solid;
+ 
+}
+
+.toppings-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0 auto 50px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.toppings-column {
+  float: left;
+  margin: 1%;
+  padding: 10px;
+  width: 15%;
+  /* border: 1px solid; */
  
 }

@@ -18,21 +18,49 @@
       <form id="pizza-order">
         <h3>Size</h3>
         <div class="size-wrapper">
-          <div class="column">
+          <div class="size-column">
             <div id="size-small" class="size-selection">Small<br>$7.50</div>
           </div>
-          <div class="column">
+          <div class="size-column">
             <div id="size-medium" class="size-selection">Medium<br>$10.00</div>
           </div>
-          <div class="column">
+          <div class="size-column">
             <div id="size-large" class="size-selection">Large<br>$12.50</div>
           </div>
         </div>
         <h3>Toppings</h3>
-        <p>All toppings $0.50 each</p>
+        <p>Additional toppings are $0.50 each.</p>
         <div class="toppings-wrapper">
-          
+          <div class="toppings-column">
+            <h4>Meats & Fish</h4>
+            <input type="checkbox" id="italian-sausage" value="sausage">
+            <label for="italian-sausage">Italian Sausage</label><br>
+            <input type="checkbox" id="pepperoni" value="pepperoni">
+            <label for="pepperoni">Pepperoni</label><br>
+            <input type="checkbox" id="ham" value="ham">
+            <label for="ham">Ham</label><br>
+            <input type="checkbox" id="chicken" value="chicken">
+            <label for="chicken">Grilled Chicken</label><br>
+            <input type="checkbox" id="anchovies" value="anchovies">
+            <label for="anchovies">Anchovies</label><br>
+          </div>
+          <div class="toppings-column">
+            <h4>Veggies & Fruits</h4>
+            <input type="checkbox" id="mushrooms" value="mushrooms">
+            <label for="mushrooms">Mushrooms</label><br>
+            <input type="checkbox" id="black-olives" value="black-olives">
+            <label for="black-olives">Black Olives</label><br>
+            <input type="checkbox" id="bell-peppers" value="bell-peppers">
+            <label for="bell-peppers">Bell Peppers</label><br>
+            <input type="checkbox" id="jalapeno" value="jalapeno">
+            <label for="jalapeno">Jalapeño Peppers</label><br>
+            <input type="checkbox" id="pineapple" value="pineapple">
+            <label for="pineapple">Pineapple</label><br>
+          </div>
         </div>
+        <br>
+        <button type="submit" id="submit-button">Submit Order</button>
+        <button type="reset">Reset</button>
       </form>
     </div>
   </div>
