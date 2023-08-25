@@ -45,8 +45,31 @@ function submit() {
 
 function handleFormSubmission(event) {
   event.preventDefault();
+  let selectedToppings = document.querySelectorAll(".toppings:checked");
+  let toppingsArray = [];
+  selectedToppings.forEach(function (element) {
+    toppingsArray.push(element.value);
+  });
+  completeOrder(toppingsArray)
+  return toppingsArray;
 
 
+
+
+  // if (toppingsArray.length === 0) {
+  //   console.log("No toppings selected");
+  // } else {
+  //   console.log(toppingsArray);
+  // }
+
+}
+
+function completeOrder(toppingsSelection) {
+  // let finishedPizza = pizza;
+  let finalToppings = toppingsSelection;
+
+  // finishedPizza.toppings = finalToppings;
+  console.log("This is the final topping selection: " + finalToppings);
 }
 
 function click() {
