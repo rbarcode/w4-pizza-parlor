@@ -27,3 +27,28 @@ Pizza.prototype.calcPrice = function () {
   let finalPrice = basePrice + costOfToppings;
   return finalPrice;
 }
+
+// UI Logic
+
+window.addEventListener("load", submit);
+window.addEventListener("reset", resubmit);
+
+function submit() {
+  const form = document.getElementById("talk-to-robot");
+  form.addEventListener("submit", handleFormSubmission);
+}
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  
+}
+
+function resubmit() {
+
+  if (document.getElementById("submit-button").disabled === true) {
+    const p = document.getElementById("new-p");
+    p.remove();
+  }
+
+  document.getElementById("submit-button").disabled = false;
+}
