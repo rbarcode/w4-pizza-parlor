@@ -15,6 +15,8 @@ Pizza.prototype.calcPrice = function () {
     basePrice = 12.50;
   } else if (this.size === "Medium") {
     basePrice = 10;
+  } else if (this.size === "Small") {
+    basePrice = 7.50;
   }
   return basePrice;
 }
