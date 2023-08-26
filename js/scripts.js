@@ -45,17 +45,16 @@ function submit() {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  let selectedToppings = document.querySelectorAll(".toppings:checked");
-  let toppingsArray = [];
-  selectedToppings.forEach(function (element) {
-    toppingsArray.push(element.value);
-  });
-  // let sizeOfPizza = returnPizzaSize();
-  let newPizza = new Pizza(returnPizzaSize(), toppingsArray);
-  console.log(newPizza);
+  completeOrder();
 
-
-
+  // let selectedToppings = document.querySelectorAll(".toppings:checked");
+  // let toppingsArray = [];
+  // selectedToppings.forEach(function (element) {
+  //   toppingsArray.push(element.value);
+  // });
+  // // let sizeOfPizza = returnPizzaSize();
+  // let newPizza = new Pizza(returnPizzaSize(), toppingsArray);
+  // console.log(newPizza);
 
 
   // if (toppingsArray.length === 0) {
@@ -67,6 +66,18 @@ function handleFormSubmission(event) {
 }
 
 
+function completeOrder (psize) {
+  let sizeOfPizza = psize;
+  let newPizza = new Pizza(sizeOfPizza);
+  let selectedToppings = document.querySelectorAll(".toppings:checked");
+  let toppingsArray = [];
+  selectedToppings.forEach(function (element) {
+    toppingsArray.push(element.value);
+  });
+  newPizza.toppings = toppingsArray;
+  console.log(newPizza);
+}
+
 
 function click() {
   const div = document.getElementById("click-size-selection");
@@ -77,15 +88,16 @@ function click() {
 
 function savePizzaSize(event) {
   let pizzaSize = event.target.value;
-  returnPizzaSize(pizzaSize)
+  completeOrder(pizzaSize)
+  // returnPizzaSize(pizzaSize)
   return pizzaSize;
 }
 
-function returnPizzaSize(psize) {
-  let returnedPizzaSize = psize
-  console.log(returnedPizzaSize);
-  return returnedPizzaSize;
-}
+// function returnPizzaSize(psize) {
+//   let returnedPizzaSize = psize
+//   console.log(returnedPizzaSize);
+//   return returnedPizzaSize;
+// }
 
 // function resubmit() {
 
