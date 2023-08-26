@@ -30,13 +30,9 @@ Pizza.prototype.calcPrice = function () {
 
 // UI Logic
 
-window.addEventListener("load", userActions);
+window.addEventListener("load", submit);
 // window.addEventListener("reset", resubmit);
 
-function userActions() {
-  submit();
-  click();
-}
 
 function submit() {
   const form = document.getElementById("pizza-order");
@@ -45,59 +41,27 @@ function submit() {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  completeOrder();
 
-  // let selectedToppings = document.querySelectorAll(".toppings:checked");
-  // let toppingsArray = [];
-  // selectedToppings.forEach(function (element) {
-  //   toppingsArray.push(element.value);
-  // });
-  // // let sizeOfPizza = returnPizzaSize();
-  // let newPizza = new Pizza(returnPizzaSize(), toppingsArray);
-  // console.log(newPizza);
+  let pizzaSize;
+  let pSize = document.getElementsByName("size-selection");
+  for (i = 0; i < pSize.length; i++) {
+    if (pSize[i].checked) {
+      pizzaSize = pSize[i].value;
+    }
+  }
 
-
-  // if (toppingsArray.length === 0) {
-  //   console.log("No toppings selected");
-  // } else {
-  //   console.log(toppingsArray);
-  // }
-
-}
-
-
-function completeOrder (psize) {
-  let sizeOfPizza = psize;
-  let newPizza = new Pizza(sizeOfPizza);
   let selectedToppings = document.querySelectorAll(".toppings:checked");
   let toppingsArray = [];
   selectedToppings.forEach(function (element) {
     toppingsArray.push(element.value);
   });
-  newPizza.toppings = toppingsArray;
+
+  let newPizza = new Pizza(pizzaSize, toppingsArray);
   console.log(newPizza);
+
+  newPizza.calcPrice();
+  console.log(newPizza.calcPrice());
 }
-
-
-function click() {
-  const div = document.getElementById("click-size-selection");
-  div.addEventListener("click", savePizzaSize);
-  // const delButton = document.querySelector("button.delete");
-  // delButton.addEventListener("click", handleDelete);
-}
-
-function savePizzaSize(event) {
-  let pizzaSize = event.target.value;
-  completeOrder(pizzaSize)
-  // returnPizzaSize(pizzaSize)
-  return pizzaSize;
-}
-
-// function returnPizzaSize(psize) {
-//   let returnedPizzaSize = psize
-//   console.log(returnedPizzaSize);
-//   return returnedPizzaSize;
-// }
 
 // function resubmit() {
 
