@@ -10,118 +10,137 @@
 </head>
 
 <body>
-  <!-- <div id="container"> -->
-  <h1>Planet Express Pizza Parlor</h1>
-  <div id="main-div">
+  <div id="container">
+    <h1>Planet Express Pizza Parlor</h1>
+    <div id="main-div">
 
-    <div class="order-screen">
-      <h2>Start Your Order</h2>
-      <form id="pizza-order">
-        <h3>Size</h3>
-        <div id="click-size-selection" class="size-wrapper">
-          <div class="radio-tile-group">
+      <div id="order-screen">
+        <h2>Place Your Order</h2>
+        <form id="pizza-order">
+          <h3>Size</h3>
+          <div id="click-size-selection" class="size-wrapper">
+            <div class="radio-tile-group">
 
-            <div class="size-column">
-              <input type="radio" id="size-small" name="size-selection" value="Small" required>
-              <div class="radio-tile">
-                <label for="size-small">
-                  <p>Small</p>
-                  <p>$7.50</p>
-                </label>
+              <div class="size-column">
+                <input type="radio" id="size-small" name="size-selection" value="Small" required>
+                <div class="radio-tile">
+                  <label for="size-small">
+                    <p>Small</p>
+                    <p>$7.50</p>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="size-column">
-              <input type="radio" id="size-medium" name="size-selection" value="Medium">
-              <div class="radio-tile">
-                <label for="size-medium">
-                  <p>Medium</p>
-                  <p>$10.00</p>
-                </label>
+              <div class="size-column">
+                <input type="radio" id="size-medium" name="size-selection" value="Medium">
+                <div class="radio-tile">
+                  <label for="size-medium">
+                    <p>Medium</p>
+                    <p>$10.00</p>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="size-column">
-              <input type="radio" id="size-large" name="size-selection" value="Large">
-              <div class="radio-tile">
-                <label for="size-large">
-                  <p>Large</p>
-                  <p>$12.50</p>
-                </label>
+              <div class="size-column">
+                <input type="radio" id="size-large" name="size-selection" value="Large">
+                <div class="radio-tile">
+                  <label for="size-large">
+                    <p>Large</p>
+                    <p>$12.50</p>
+                  </label>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
+          <h3>Toppings</h3>
+          <p>Additional toppings are $0.50 each.</p>
+          <div class="toppings-wrapper">
+            <div class="checkbox-tile-group">
+
+              <div class="toppings-column">
+                <h4>Meats & Fish</h4>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="italian-sausage" class="toppings" value="Italian Sausage">
+                  <label for="italian-sausage">Italian Sausage</label>
+                </div>
+
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="pepperoni" class="toppings" value="Pepperoni">
+                  <label for="pepperoni">Pepperoni</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="Ham" class="toppings" value="Ham">
+                  <label for="ham">Ham</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="chicken" class="toppings" value="Grilled Chicken">
+                  <label for="chicken">Grilled Chicken</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="anchovies" class="toppings" value="Anchovies">
+                  <label for="anchovies">Anchovies</label>
+                </div>
+
+              </div>
+
+              <div class="toppings-column">
+                <h4>Veggies & Fruits</h4>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="mushrooms" class="toppings" value="Mushrooms">
+                  <label for="mushrooms">Mushrooms</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="black-olives" class="toppings" value="Black Olives">
+                  <label for="black-olives">Black Olives</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="bell-peppers" class="toppings" value="Bell Peppers">
+                  <label for="bell-peppers">Bell Peppers</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="jalapeno" class="toppings" value="Jalapeño Peppers">
+                  <label for="jalapeno">Jalapeño Peppers</label>
+                </div>
+
+                <div class="p-toppings">
+                  <input type="checkbox" id="pineapple" class="toppings" value="Pineapple">
+                  <label for="pineapple">Pineapple</label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <button type="submit" id="submit-button">Review Order</button>
+          <button type="reset">Reset</button>
+        </form>
+      </div>
+
+      <div id="review-screen" class="hidden">
+        <h2>Review Your Order</h2>
+        <div><strong class="strong">Size: </strong><span id="results-size"></span></div>
+        <br>
+        <div><strong class="strong">Toppings: </strong><span id="results-toppings"></span></div>
+        <br>
+        <div><strong class="strong">Your Total: </strong>$<span id="results-price"></span></div>
+        <br>
+        <div id="start-over">
+          <button type="button">Shut up and take my money!</button>
+          <button type="button">Start Over</button>
         </div>
-        <h3>Toppings</h3>
-        <p>Additional toppings are $0.50 each.</p>
-        <div class="toppings-wrapper">
-          <div class="toppings-column">
-            <h4>Meats & Fish</h4>
+      </div>
 
-          
-              <div class="p-toppings">
-                <input type="checkbox" id="italian-sausage" class="toppings" value="Italian Sausage">
-                <label for="italian-sausage">Italian Sausage</label>
-              </div>
-          
-
-            <div class="p-toppings">
-              <input type="checkbox" id="pepperoni" class="toppings" value="Pepperoni">
-              <label for="pepperoni">Pepperoni</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="Ham" class="toppings" value="Ham">
-              <label for="ham">Ham</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="chicken" class="toppings" value="Grilled Chicken">
-              <label for="chicken">Grilled Chicken</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="anchovies" class="toppings" value="Anchovies">
-              <label for="anchovies">Anchovies</label>
-            </div>
-          </div>
-          <div class="toppings-column">
-            <h4>Veggies & Fruits</h4>
-            <div class="p-toppings">
-              <input type="checkbox" id="mushrooms" class="toppings" value="Mushrooms">
-              <label for="mushrooms">Mushrooms</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="black-olives" class="toppings" value="Black Olives">
-              <label for="black-olives">Black Olives</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="bell-peppers" class="toppings" value="Bell Peppers">
-              <label for="bell-peppers">Bell Peppers</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="jalapeno" class="toppings" value="Jalapeño Peppers">
-              <label for="jalapeno">Jalapeño Peppers</label>
-            </div>
-            <div class="p-toppings">
-              <input type="checkbox" id="pineapple" class="toppings" value="Pineapple">
-              <label for="pineapple">Pineapple</label>
-            </div>
-          </div>
-        </div>
-        <button type="submit" id="submit-button">Submit Order</button>
-        <button type="reset">Reset</button>
-      </form>
     </div>
-    <div class="review-screen">
-      <h2>Review Your Order</h2>
-      <div><strong class="strong">Size: </strong><span id="results-size"></span></div>
-      <br>
-      <div><strong class="strong">Toppings: </strong><span id="results-toppings"></span></div>
-      <br>
-      <div><strong class="strong">Your Total: </strong>$<span id="results-price"></span></div>
-    </div>
-
   </div>
-  <!-- </div> -->
 </body>
 
 </html>

@@ -26,13 +26,16 @@ Pizza.prototype.calcPrice = function () {
 
   let finalPrice = basePrice + costOfToppings;
   return finalPrice;
-}
+};
 
 // UI Logic
 
-window.addEventListener("load", submit);
-// window.addEventListener("reset", resubmit);
+window.addEventListener("load", userAction);
 
+function userAction() {
+  submit();
+  click();
+}
 
 function submit() {
   const form = document.getElementById("pizza-order");
@@ -57,10 +60,7 @@ function handleFormSubmission(event) {
   });
 
   let newPizza = new Pizza(pizzaSize, toppingsArray);
-  console.log(newPizza);
-
-  let totalPrice = newPizza.calcPrice();
-  console.log(newPizza.calcPrice());
+  let totalPrice = newPizza.calcPrice().toFixed(2);
 
   displayOrder(pizzaSize, toppingsArray, totalPrice);
 }
@@ -77,14 +77,16 @@ function displayOrder(size, toppings, price) {
     toppingsSpan.innerText = toppings.toString().replace(/,/g, ", ");
   }
 
+  document.getElementById("order-screen").setAttribute("class", "hidden");
+  document.getElementById("review-screen").removeAttribute("class");
 }
 
-// function resubmit() {
+function click() {
+  document.getElementById("start-over").addEventListener("click", startOver);
+}
 
-//   if (document.getElementById("submit-button").disabled === true) {
-//     const p = document.getElementById("new-p");
-//     p.remove();
-//   }
-
-//   document.getElementById("submit-button").disabled = false;
-// }
+function startOver() {
+  document.getElementById("pizza-order").reset();
+  document.getElementById("order-screen").removeAttribute("class");
+  document.getElementById("review-screen").setAttribute("class", "hidden");
+}

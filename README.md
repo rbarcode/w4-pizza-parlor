@@ -2,9 +2,7 @@
 
 #### By Richard Barbour II
 
-#### / text to come /  
-
-/ link to come /
+#### Order the best pizza this side of the universe from Fry and the entire gang at Planet Express. Choose a pizza size and any additional toppings before reviewing your order, which includes the total price. 
 
 
 ## Technologies Used
@@ -16,7 +14,7 @@
 
 ## Description
 
-/ description to come /
+This Futurama-themed webpage allows the customer to begin the process of ordering a pizza by first selecting a size (small, medium or large) using custom radio button tiles. The customer is then permitted to choose any additional toppings before clicking a "Review Order" button. On the review order screen, the customer's selection of pizza size and toppings is displayed along with the total price.
 
 ## Setup/Installation Requirements
 
