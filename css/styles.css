@@ -1,34 +1,179 @@
+:root {
+  --primary-color: #07afd9;
+
+}
+
+
+h3 {
+  margin: 0;
+}
+
+/* h4,
+p {
+  margin: 10px auto auto auto;
+  border: 1px solid;
+  box-shadow: 5px, 5px, 5px, red;
+} */
+
+#main-div {
+  box-sizing: border-box;
+}
 
 .size-wrapper {
   display: block;
   width: 100%;
-  margin: 0 auto 50px auto;
+  margin: 0 auto auto auto;
   box-sizing: border-box;
   overflow: hidden;
+
+}
+
+.radio-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .size-column {
-  float: left;
-  margin: 1%;
+  position: relative;
+  /* float: left; */
+  /* margin: 1%; */
   padding: 10px;
-  width: 10%;
-  border: 1px solid;
- 
+  height: 100%;
+  width: 20%;
+  
+}
+
+.size-column input {
+  position: absolute;
+  height: 73%;
+  width: 93%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.size-column .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  transition: all 300ms ease;
+  box-shadow: 5px 5px 5px var(--primary-color);
+}
+
+.size-column label {
+  display: block;
+  
+}
+
+.size-column label p {
+  margin: 5px;
+  font-size: large;
+}
+
+input:checked + .radio-tile {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 12px var(--primary-color);
+}
+
+input:checked + .radio-tile label {
+  color: white;
+}
+
+input:hover + .radio-tile {
+  box-shadow: 0 0 5px var(--primary-color);
 }
 
 .toppings-wrapper {
+  background-color: bisque;
   display: block;
   width: 100%;
-  margin: 0 auto 50px auto;
+  margin: 0 auto auto auto;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 5px, 5px, 5px, red;
 }
 
 .toppings-column {
   float: left;
-  margin: 1%;
+  margin: .5%;
   padding: 10px;
-  width: 15%;
-  /* border: 1px solid; */
- 
+  width: 25%;
+  border: 1px solid;
+  box-shadow: 5px, 5px, 5px, red;
 }
+
+.p-toppings {
+  background-color: aqua;
+  margin: 7px 0 7px 0;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 5px, 5px, 5px, red;
+
+}
+
+
+.strong {
+  font-size: large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #main-div {
+  position: absolute;
+  left: 10%;
+
+  width: 75%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 615px;
+
+  perspective: 500px;
+}
+
+#flip-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 10px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+
+
+
+
+.order-screen, .review-screen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  backface-visibility: hidden;
+}
+
+.review-screen {
+  background-color: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+} */

@@ -13,13 +13,13 @@ Pizza.prototype.calcPrice = function () {
   let costOfToppings = this.toppings.length * toppingsPrice;
 
   switch (this.size) {
-    case ("large"):
+    case ("Large"):
       basePrice = 12.50;
       break;
-    case ("medium"):
+    case ("Medium"):
       basePrice = 10;
       break;
-    case ("small"):
+    case ("Small"):
       basePrice = 7.50;
       break;
   }
@@ -50,8 +50,8 @@ function handleFormSubmission(event) {
     }
   }
 
-  let selectedToppings = document.querySelectorAll(".toppings:checked");
   let toppingsArray = [];
+  let selectedToppings = document.querySelectorAll(".toppings:checked");
   selectedToppings.forEach(function (element) {
     toppingsArray.push(element.value);
   });
@@ -59,8 +59,24 @@ function handleFormSubmission(event) {
   let newPizza = new Pizza(pizzaSize, toppingsArray);
   console.log(newPizza);
 
-  newPizza.calcPrice();
+  let totalPrice = newPizza.calcPrice();
   console.log(newPizza.calcPrice());
+
+  displayOrder(pizzaSize, toppingsArray, totalPrice);
+}
+
+function displayOrder(size, toppings, price) {
+  let sizeSpan = document.getElementById("results-size");
+  let toppingsSpan = document.getElementById("results-toppings");
+  let priceSpan = document.getElementById("results-price");
+  sizeSpan.innerText = size;
+  priceSpan.innerText = price;
+  if (toppings.length === 0) {
+    toppingsSpan.innerText = "You did not choose any toppings."
+  } else {
+    toppingsSpan.innerText = toppings.toString().replace(/,/g, ", ");
+  }
+
 }
 
 // function resubmit() {
